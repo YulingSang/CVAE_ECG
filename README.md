@@ -22,9 +22,15 @@ git clone https://github.com/YulingSang/CVAE_ECG
 
   ```sh
   ├── README.md
+  
   ├── train.py ***  Runnable file
                     Edit the network structure and dataset input
+                    
+  ├── train_prediction.py ***  Runnable file
+                               This train file is for vae_prediction
+                               
   ├── vae.py *** the implementaion of conditional variational autoencoder
+  
   ├── vae_prediction.py *** The VAE network which added an extra layer to the 
                             latent space to realize risk prediction
   ```
