@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Sang"
+  given-names: "Yuling"
+title: "CVAE_ECG"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2022-07-14
+url: "https://github.com/YulingSang/CVAE_ECG"
+preferred-citation:
+  type: conference-paper
+  authors:
+  - family-names: "Sang"
+    given-names: "Yuling"
+  - family-names: "Beetz"
+    given-names: "Marcel"
+  - family-names: "Grau"
+    given-names: "Vicente"
+  title: "Generation of 12-Lead Electrocardiogram with Subject-Specific, Image-Derived Characteristics Using a Conditional Variational Autoencoder."
+  conference:
+    name: "2022 IEEE 19th International Symposium on Biomedical Imaging (ISBI)"
+    year: 2022
