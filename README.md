@@ -2,6 +2,9 @@ Generation of 12-Lead Electrocardiogram with Subject-Specific, Image-Derived Cha
 -----
 
 ## Introduction
+This repository is the source demo code for conference paper "Generation of 12-Lead Electrocardiogram with Subject-Specific, Image-Derived Characteristics Using a Conditional Variational Autoencoder". [Paperlink.](https://ieeexplore.ieee.org/abstract/document/9761431)
+
+
 we propose a conditional variational autoencoder (cVAE) to automatically generate realistic 12-lead ECG signals. Generated ECGs can be adjusted to correspond to specific subject characteristics, particularly those from images. We demonstrate the ability of the model to adjust to age, sex and Body Mass Index (BMI) values.
 
 ## Network
@@ -19,10 +22,11 @@ git clone https://github.com/YulingSang/CVAE_ECG
 
   ```sh
   ├── README.md
-  ├── vae.py *** the implementaion of conditional variational autoencoder
   ├── train.py ***  Runnable file
                     Edit the network structure and dataset input
-  ├── vae_prediction.py *** The VAE network which added an extra layer to the latent space to realize risk prediction
+  ├── vae.py *** the implementaion of conditional variational autoencoder
+  ├── vae_prediction.py *** The VAE network which added an extra layer to the 
+                            latent space to realize risk prediction
   ```
  
 ## Instructions
