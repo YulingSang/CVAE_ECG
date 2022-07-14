@@ -47,6 +47,7 @@ git clone https://github.com/YulingSang/CVAE_ECG
     * If you want to use vae_prediction.py, make sure you edit the loss function in vae_prediction.py as you need
     * For this work, we use Cox proportional hazard regression model and use negative cox proportional hazards partial likelihood as the prediction loss
     * If you have tasks like classification, please change this into correct loss function, e.g. cross_entropy
+    * Also if you want to change combined loss with different parameter, you can edit it at the MyCallBack class in vae.py and vae_prediction.py
 
 3.  Just run the train.py
     ```
