@@ -157,14 +157,13 @@ class VAE:
 
     def _build_classifier(self):
         classifier_input = self._add_classifier_input()
-        condition = self._add_condition_input()
-        classifier_output = self._add_classifier_output(classifier_input, condition)
-        self.classifier = Model([classifier_input, condition], classifier_output, name="classifier")
+        classifier_output = self._add_classifier_output(classifier_input)
+        self.classifier = Model(classifier_input, classifier_output, name="classifier")
 
     def _add_classifier_input(self):
         return Input(shape=self.latent_space_dim, name="classifier_input")
 
-    def _add_classifier_output(self, x, condition):
+    def _add_classifier_output(self, x):
         output = Dense(1, activation="sigmoid")(x)
         return output
 
@@ -302,6 +301,6 @@ class VAE:
         condition = self._model_condition
         model_encoder_output = self.encoder([model_input, condition])
         model_decoder_output = self.decoder([model_encoder_output, condition])
-        model_classifier_output = self.classifier([model_encoder_output, condition])
+        model_classifier_output = self.classifier(model_encoder_output)
         self.model = Model([model_input,condition] , [model_encoder_output, model_decoder_output, model_classifier_output],
                            name="VAE")
