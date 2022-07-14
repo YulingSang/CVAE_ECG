@@ -12,20 +12,36 @@ we propose a conditional variational autoencoder (cVAE) to automatically generat
 ```
 git clone https://github.com/YulingSang/CVAE_ECG
 ```
-2. **Edit details in train.py**
-(Edit the parameters and data directory, one can create a config.py file for easier input)
+2. **Install tensorflow2.0+**
 
-3. **Run train.py**
-```
-python train.py
-```
 
-## Main Files: Project Structure
+## Main Files: 
 
   ```sh
   ├── README.md
   ├── vae.py *** the implementaion of conditional variational autoencoder
   ├── train.py ***  Runnable file
                     Edit the network structure and dataset input
-  ├── vae_prediction.txt *** The VAE network which added an extra layer to the latent space for risk prediction
+  ├── vae_prediction.py *** The VAE network which added an extra layer to the latent space to realize risk prediction
   ```
+ 
+## Instructions
+ 
+1.  Edit details in train.py
+    * Edit the global parameters like epoch, batchsize, learning rate
+    * Edit network structure, especially the input_shape and convolutional layers
+    * Edit data directory 
+    * Or one can create a config.py file for easier input
+    
+2.  Edit the loss function
+    * If you want to use vae_prediction.py, make sure you edit the loss function in vae_prediction.py as you need
+    * For this work, we use Cox proportional hazard regression model and use negative cox proportional hazards partial likelihood as the prediction loss
+    * If you have tasks like classification, please change this into correct loss function, e.g. cross_entropy
+
+3.  Just run the train.py
+    ```
+    python train.py
+    ```
+    * The model parameters and weights can be saved using save() function in VAE class.
+
+  
